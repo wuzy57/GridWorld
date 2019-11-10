@@ -1,10 +1,13 @@
 package hello;
 
-import org.junit.Test;
 
 public class helloworld {
-	@Test
-	public void main(){
-		System.out.println("Hello World");
+	
+	public static void main(String [] args) {
+		System.out.println(hellow());
+		
+	}
+	public static String hellow(){
+		return "Hello World";
 	}
 }
