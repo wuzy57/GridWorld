@@ -1,2 +1,3 @@
 module hello {
+	requires junit;
 }

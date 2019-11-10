@@ -1,7 +1,10 @@
 package hello;
 
+import org.junit.Test;
+
 public class helloworld {
-	public static void main(String[] args){
+	@Test
+	public void main(){
 		System.out.println("Hello World");
 	}
 }
