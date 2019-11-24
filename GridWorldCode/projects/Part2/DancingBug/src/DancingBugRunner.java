@@ -5,6 +5,7 @@ import info.gridworld.actor.ActorWorld;
 import info.gridworld.grid.Location;
 
 public class DancingBugRunner {
+	private DancingBugRunner() {}
 	public static void main(String[] args)
     {
         ActorWorld world = new ActorWorld();

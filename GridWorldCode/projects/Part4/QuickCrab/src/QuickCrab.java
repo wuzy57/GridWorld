@@ -24,7 +24,9 @@ public class QuickCrab extends CrabCritter
 	  addIfGoodTwoAwayMove(loca,getDirection() + Location.RIGHT);
 	  //如果都不为空，则像CrabCritter一样移动
 	  if (loca.size() == 0)
+	  {
 		  return super.getMoveLocations();
+	  }
 	  return loca;
   }
 
@@ -37,7 +39,9 @@ public class QuickCrab extends CrabCritter
 		  Location loc2 = transLoc.getAdjacentLocation(dir); 
 		  //如果位置可行且为空，则添加到ArrayList
 		  if(g.isValid(loc2) && g.get(loc2)== null)
+		  {
 			  locs.add(loc2); 
+		  }
 		  }
   }
 }

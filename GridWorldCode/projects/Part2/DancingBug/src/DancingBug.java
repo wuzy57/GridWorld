@@ -10,11 +10,19 @@ public class DancingBug extends Bug{
      * Constructs a box bug that traces a square of a given side length
      * @param length the side length
      */
+    
     public DancingBug (int [] turns)
     {
-        steps = 0;
-        turnArr=turns;
-        turnLength=turns.length;
+    	turnArr=new int[turns.length];
+    	if(null!=turns)
+    	{
+    		steps = 0;
+    		for(int i=0;i<turns.length;i++)
+    		{
+            	turnArr[i]=turns[i];
+    		}
+        	turnLength=turns.length;
+    	}
     }
 
     /**
@@ -23,9 +31,13 @@ public class DancingBug extends Bug{
     public void act()
     {
     	if(steps==turnLength)
-    		steps=0;
+    	{
+    		steps=0;	
+    	}
     	for(int i=0;i<turnArr[steps];i++)
+    	{
     		turn();
+    	}
     	steps++;
     	move();
     }

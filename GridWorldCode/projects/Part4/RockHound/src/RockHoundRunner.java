@@ -7,8 +7,9 @@ import info.gridworld.actor.Bug;
 import info.gridworld.actor.Rock;
 import info.gridworld.grid.Location; 
 
-public class RockHoundRunner
+public final class RockHoundRunner
 {
+	private RockHoundRunner() {}
 	public static void main(String[] args)
 	{
 		ActorWorld world = new ActorWorld();

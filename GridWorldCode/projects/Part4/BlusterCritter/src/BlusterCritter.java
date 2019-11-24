@@ -24,6 +24,7 @@ public class BlusterCritter extends Critter
     Location loc = getLocation();
     //遍历周围的四个格子
     for(int r = loc.getRow() - 2; r <= loc.getRow()+2;r++)
+    {
     	for(int c = loc.getCol() - 2; c <= loc.getCol()+2;c++)
     	{
     		Location searchLoc = new Location(r,c); 
@@ -31,8 +32,12 @@ public class BlusterCritter extends Critter
     		{
     			Actor a = getGrid().get(searchLoc); 
     			if(a != null && a != this)
-    				actors.add(a); }
+    			{
+    				actors.add(a); 
+    			}
+    		}
     	}
+    }
     return actors;
   }
 
@@ -43,19 +48,33 @@ public class BlusterCritter extends Critter
 		  if(a instanceof Critter)
 			  count++;
 	  if(count < courageFactor)
+	  {
 		  lighten();
+	  }
 	  else
+	  {
     	darken(); 
+	  }
     }
   //变暗的实现
   private void darken()
   {
 	  Color c = getColor();
 	  int red = c.getRed();
-	  int green = c.getGreen(); int blue = c.getBlue();
-	  if(red > 0) red--; 
-	  if(green > 0) green--; 
-	  if(blue > 0) blue--;
+	  int green = c.getGreen(); 
+	  int blue = c.getBlue();
+	  if(red > 0) 
+	  {
+		  red--; 
+	  }
+	  if(green > 0) 
+	  {
+		  green--; 
+	  }
+	  if(blue > 0) 
+	  {
+		  blue--;
+	  }
 	  setColor(new Color(red, green, blue));
   }
   //变亮的实现
@@ -64,9 +83,18 @@ public class BlusterCritter extends Critter
 	  Color c = getColor();
 	  int red = c.getRed();
 	  int green = c.getGreen(); int blue = c.getBlue();
-	  if(red < 255) red++;
-	  if(green < 255) green++;
-	  if(blue < 255) blue++;
+	  if(red < 255) 
+	  {
+		  red++;
+	  }
+	  if(green < 255) 
+	  {
+		  green++;
+	  }
+	  if(blue < 255) 
+	  {
+		  blue++;
+	  }
 	  setColor(new Color(red, green, blue));
   }
 }
